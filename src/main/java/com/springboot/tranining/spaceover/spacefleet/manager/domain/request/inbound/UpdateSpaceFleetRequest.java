@@ -1,10 +1,7 @@
-package com.springboot.tranining.spaceover.spacefleet.manager.domain.model;
+package com.springboot.tranining.spaceover.spacefleet.manager.domain.request.inbound;
 
 import com.springboot.tranining.spaceover.spacefleet.manager.enums.SpaceFleetStatus;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.List;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -12,23 +9,16 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
-@Entity
 @Builder
 @AllArgsConstructor
-public class SpaceFleet extends Auditable<String> {
+public class UpdateSpaceFleetRequest {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-
-	@NotNull
 	@NotEmpty
 	private String name;
 
 	@NotEmpty
 	private String sector;
 
-	@NotNull
 	private SpaceFleetStatus status;
 
 }
